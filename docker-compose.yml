@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  focusflow:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data

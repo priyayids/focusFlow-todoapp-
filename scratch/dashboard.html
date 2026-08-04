@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FocusFlow Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#bbc3ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "outline-variant": "#c5c5d7",
+                        "on-primary-fixed": "#000d60",
+                        "tertiary": "#684000",
+                        "on-secondary-container": "#007165",
+                        "background": "#f7f9fb",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-primary-container": "#d7daff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-tint": "#3b4fd2",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#895600",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "outline": "#757686",
+                        "on-secondary-fixed-variant": "#005047",
+                        "tertiary-fixed": "#ffddb8",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dfe0ff",
+                        "on-primary-fixed-variant": "#1d34ba",
+                        "secondary": "#006b5f",
+                        "on-surface-variant": "#454654",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-fixed": "#00201c",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-container": "#ffd5a7",
+                        "surface-dim": "#d8dadc",
+                        "inverse-surface": "#2d3133",
+                        "on-background": "#191c1e",
+                        "secondary-container": "#62fae3",
+                        "primary": "#2036bd",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#3e52d5",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed": "#62fae3",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md font-sans antialiased flex">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex bg-surface-container-low h-screen w-64 fixed left-0 top-0 border-r border-outline-variant flex-col py-lg px-md z-50">
+<div class="mb-xl px-sm">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">FocusFlow</h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-xs">Productivity Workspace</p>
+</div>
+<div class="flex-1 space-y-sm">
+<!-- Active Tab -->
+<a class="flex items-center px-sm py-sm rounded-lg bg-surface-container-high text-primary font-bold border-r-2 border-primary hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-md">dashboard</span>
+<span class="font-body-sm text-body-sm">Dashboard</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center px-sm py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-md">description</span>
+<span class="font-body-sm text-body-sm">Notes</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-md">check_circle</span>
+<span class="font-body-sm text-body-sm">Tasks</span>
+</a>
+<a class="flex items-center px-sm py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-md">calendar_month</span>
+<span class="font-body-sm text-body-sm">Calendar</span>
+</a>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary rounded-lg py-sm px-md font-body-sm text-body-sm hover:opacity-90 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined mr-xs text-[18px]">add</span> New Entry
+             </button>
+<div class="mt-lg flex items-center px-sm cursor-pointer hover:bg-surface-container-high p-xs rounded transition-colors">
+<img alt="User Profile" class="w-8 h-8 rounded-full bg-surface-variant object-cover" data-alt="A small, circular avatar portrait of a professional individual in a minimalist, well-lit studio setting. The lighting is soft and even, typical of a modern productivity app user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzlW4upzztnMVA1OLgOgyZ-oBJew-TJFlXOzyaU_e77gpkp8VbVYjZ9qkMsCtAV1DLRdGRu5WE9IlOHDwPa38DgLzRZkCNjJAwH4V_eHVmfLT8mBPNF9ljFNoVWyFMSqwC9mAWx5tV3Y0oBmGwtcdGaiDh7peMveyPxLJsfQr9zFLp4CCOzcYoc5Q8rLh4vNnbQlnedegTWQNo2encP_avKkWj8QDUBctno207Yiv1hLx13pt2HLhV"/>
+<div class="ml-md">
+<p class="font-body-sm text-body-sm font-semibold">Alex Chen</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Free Plan</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-64 w-full md:w-[calc(100%-16rem)] min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-lg sticky top-0 z-40">
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button class="md:hidden text-on-surface p-xs hover:bg-surface-container-low rounded-full transition-colors mr-md">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Search (Left aligned as per JSON) -->
+<div class="flex-1 max-w-md relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px] pointer-events-none group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-xl pr-md py-sm bg-surface-container-low border-none rounded-full font-body-sm text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface transition-all placeholder-on-surface-variant" placeholder="Search tasks, notes..." type="text"/>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center space-x-md ml-auto">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full hover:bg-surface-container-low relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-xs rounded-full hover:bg-surface-container-low hidden sm:block">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full bg-surface-variant object-cover md:hidden ml-sm cursor-pointer" data-alt="A small, circular avatar portrait of a professional individual in a minimalist, well-lit studio setting. The lighting is soft and even, typical of a modern productivity app user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNjS_0SSft3J8TLbwsGhEEVYVNg-2nA7mfzTv49RMt4-xST_wUAZwo-kxJNpMDUHDFqU1TaDTakMbVScUhPBP-m7rwY_U95MdLrmETM5foLMljqX6869N1TMQ5xfFCBVHVo9xq7N9PTkY2rP54Kkk2Eqk0xbw8nTCuj_DoEKIhXbiAJc-g0gE4P0plXlU1TTyvLrbNWOEny3jS2s4igIm-qjCnimgHPUExFxOnFceZJwbZ_TKqcYW9"/>
+</div>
+</header>
+<!-- Canvas -->
+<div class="p-lg md:p-xl flex-1 w-full max-w-7xl mx-auto space-y-xl">
+<!-- Page Header -->
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Good Morning, Alex</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Here's your focus for today, Tuesday, Oct 24.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg auto-rows-[minmax(180px,auto)]">
+<!-- Today's Tasks (Spans 8 cols on large screens) -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col hover:shadow-[0_4px_6px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-center mb-md border-b border-surface-variant pb-sm">
+<h3 class="font-headline-sm text-headline-sm flex items-center text-on-surface">
+<span class="material-symbols-outlined mr-sm text-primary">task_alt</span>
+                            Today's Tasks
+                        </h3>
+<span class="font-label-md text-label-md bg-surface-container py-xs px-sm rounded-full text-on-surface-variant">5 Remaining</span>
+</div>
+<div class="flex-1 space-y-sm overflow-y-auto pr-sm scrollbar-hide">
+<!-- Task Item 1 -->
+<div class="group flex items-start p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border-l-4 border-transparent hover:border-primary">
+<input class="mt-1 mr-md rounded border-outline-variant text-primary focus:ring-primary h-4 w-4 bg-transparent cursor-pointer" type="checkbox"/>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Finalize Q3 Marketing Report</p>
+<div class="flex items-center mt-1 space-x-md">
+<span class="font-label-md text-label-md text-error flex items-center"><span class="material-symbols-outlined text-[14px] mr-xs">schedule</span> Due 12:00 PM</span>
+<span class="font-label-md text-label-md bg-secondary-container text-on-secondary-container px-xs rounded">High Priority</span>
+</div>
+</div>
+</div>
+<!-- Task Item 2 -->
+<div class="group flex items-start p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border-l-4 border-transparent hover:border-primary">
+<input class="mt-1 mr-md rounded border-outline-variant text-primary focus:ring-primary h-4 w-4 bg-transparent cursor-pointer" type="checkbox"/>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Review Design System Updates</p>
+<div class="flex items-center mt-1 space-x-md">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center"><span class="material-symbols-outlined text-[14px] mr-xs">schedule</span> Due 3:00 PM</span>
+</div>
+</div>
+</div>
+<!-- Task Item 3 (Completed) -->
+<div class="flex items-start p-sm bg-surface-container-lowest opacity-60 rounded-lg border-l-4 border-secondary">
+<input checked="" class="mt-1 mr-md rounded border-outline-variant text-secondary focus:ring-secondary h-4 w-4 bg-transparent cursor-default" disabled="" type="checkbox"/>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm font-semibold text-on-surface-variant line-through">Daily Standup Prep</p>
+</div>
+</div>
+</div>
+<button class="mt-md font-body-sm text-body-sm text-primary hover:underline self-start flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-xs">add</span> Add Task
+                    </button>
+</div>
+<!-- Upcoming Meetings (Spans 4 cols on large screens) -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col">
+<div class="flex justify-between items-center mb-md pb-sm">
+<h3 class="font-headline-sm text-headline-sm flex items-center text-on-surface">
+<span class="material-symbols-outlined mr-sm text-tertiary-container">event</span>
+                            Upcoming
+                        </h3>
+</div>
+<div class="space-y-md flex-1">
+<!-- Meeting 1 -->
+<div class="bg-surface-container-low p-md rounded-lg border border-transparent hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-start mb-xs">
+<h4 class="font-body-sm text-body-sm font-bold text-on-surface">Design Sync</h4>
+<span class="font-label-md text-label-md text-primary bg-primary-fixed py-[2px] px-sm rounded-full">In 30m</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm">10:00 AM - 11:00 AM</p>
+<div class="flex -space-x-2">
+<img alt="Attendee 1" class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover" data-alt="A small, circular avatar portrait of a professional individual in a minimalist, well-lit studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRtv5EWXb7y4M4KlDnFO8_o15-NIt0K1uSdexztkBGyckVPK7HKRYPsJiZHt4R0EYoiBOpZWCMGYgDZBKkjH82O6RGgIPLZqCc-rZCi1PCZTh9I2lhqiLdMmtQ2ImHWHrrL7noOx-uFrAfcIHKYj6M2oZAzmAy7M-nqNuZHRK7ep1RJn376CXCdn4d9ibyHu0CDRcSHVPBts3ZcmbkNZkx6wLuPsuRKui4IDEAE0YCYzTJlRJ6FDep"/>
+<img alt="Attendee 2" class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover" data-alt="A small, circular avatar portrait of a professional individual in a minimalist, well-lit studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbfu3YzRZ-Yj8HF8E0Th64mHVBDBUYobkBP-P1daz46EiwC8UXGIissmEXR0B4hLSSPSCWIKZQpf20p3jOiY-sy8Pa1loef-uwlFaNR2BuAIvgdcTeOjzprhvpPnWX1C3-Js07UZ74IE6JvZNuaTpCR6EPVoaCuE9TzzZebkfBsGBU2bQhGxuSdS835jhXZEz46zoNBK2hVJTHVQLsw__u-Ga1QtNE0qvceLDWrk9_GlGDLx0iSNIb"/>
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-low bg-surface-variant flex items-center justify-center font-label-md text-[10px] text-on-surface-variant">+2</div>
+</div>
+</div>
+<!-- Meeting 2 -->
+<div class="bg-surface-container-low p-md rounded-lg border border-transparent hover:border-outline-variant transition-colors opacity-75">
+<div class="flex justify-between items-start mb-xs">
+<h4 class="font-body-sm text-body-sm font-bold text-on-surface">Client Presentation</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2:00 PM - 3:30 PM</p>
+</div>
+</div>
+</div>
+<!-- Pinned Notes (Spans full width, uses CSS Grid internally for cards) -->
+<div class="md:col-span-12">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm flex items-center text-on-surface">
+<span class="material-symbols-outlined mr-sm text-on-surface-variant">push_pin</span>
+                            Pinned Notes
+                        </h3>
+<a class="font-body-sm text-body-sm text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Note Card 1 -->
+<div class="bg-surface-bright p-md rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer flex flex-col aspect-square relative group overflow-hidden">
+<!-- Subtle abstract background hint -->
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors"></div>
+<h4 class="font-body-sm text-body-sm font-bold text-on-surface mb-xs relative z-10">Project Alpha Ideas</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-4 relative z-10 flex-1">Brainstorming session notes for the new onboarding flow. Need to focus on reducing friction in the first 3 steps. Consider adding a progressive disclosure pattern.</p>
+<span class="font-label-md text-label-md text-on-surface-variant mt-sm relative z-10">Updated 2h ago</span>
+</div>
+<!-- Note Card 2 -->
+<div class="bg-surface-bright p-md rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer flex flex-col aspect-square relative group overflow-hidden">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-secondary/5 rounded-full blur-xl group-hover:bg-secondary/10 transition-colors"></div>
+<h4 class="font-body-sm text-body-sm font-bold text-on-surface mb-xs relative z-10">Weekly Review</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-4 relative z-10 flex-1">- Finished Q2 goals.<br/>- Need to schedule 1:1s.<br/>- Update design system documentation with new tokens.</p>
+<span class="font-label-md text-label-md text-on-surface-variant mt-sm relative z-10">Yesterday</span>
+</div>
+<!-- Note Card 3 -->
+<div class="bg-surface-bright p-md rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer flex flex-col aspect-square relative group overflow-hidden">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-tertiary/5 rounded-full blur-xl group-hover:bg-tertiary/10 transition-colors"></div>
+<h4 class="font-body-sm text-body-sm font-bold text-on-surface mb-xs relative z-10">Meeting Snippets</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-4 relative z-10 flex-1">"The key is simplicity." - Sarah.<br/>Action item: Revise the dashboard layout to prioritize tasks over general metrics.</p>
+<span class="font-label-md text-label-md text-on-surface-variant mt-sm relative z-10">Oct 20</span>
+</div>
+<!-- Add New Note Placeholder -->
+<div class="bg-transparent border-2 border-dashed border-outline-variant p-md rounded-xl hover:bg-surface-container-low hover:border-outline transition-all cursor-pointer flex flex-col items-center justify-center aspect-square text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[32px] mb-sm">post_add</span>
+<span class="font-body-sm text-body-sm font-semibold">Quick Note</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

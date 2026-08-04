@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background dark:bg-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FocusFlow - Notes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#bbc3ff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#e6e8ea",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "outline-variant": "#c5c5d7",
+                      "on-primary-fixed": "#000d60",
+                      "tertiary": "#684000",
+                      "on-secondary-container": "#007165",
+                      "background": "#f7f9fb",
+                      "secondary-fixed-dim": "#3cddc7",
+                      "on-primary-container": "#d7daff",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "on-tertiary-fixed": "#2a1700",
+                      "surface-tint": "#3b4fd2",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#895600",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-surface": "#191c1e",
+                      "on-primary": "#ffffff",
+                      "outline": "#757686",
+                      "on-secondary-fixed-variant": "#005047",
+                      "tertiary-fixed": "#ffddb8",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#dfe0ff",
+                      "on-primary-fixed-variant": "#1d34ba",
+                      "secondary": "#006b5f",
+                      "on-surface-variant": "#454654",
+                      "surface-bright": "#f7f9fb",
+                      "on-secondary-fixed": "#00201c",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e0e3e5",
+                      "primary-fixed-dim": "#bbc3ff",
+                      "surface-container": "#eceef0",
+                      "on-tertiary-container": "#ffd5a7",
+                      "surface-dim": "#d8dadc",
+                      "inverse-surface": "#2d3133",
+                      "on-background": "#191c1e",
+                      "secondary-container": "#62fae3",
+                      "primary": "#2036bd",
+                      "surface": "#f7f9fb",
+                      "primary-container": "#3e52d5",
+                      "surface-container-low": "#f2f4f6",
+                      "secondary-fixed": "#62fae3",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin": "24px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "gutter": "24px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "display": ["Inter"],
+                      "body-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="h-full flex text-on-surface font-body-md text-body-md antialiased overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low h-screen w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline-variant hidden md:flex flex-col py-lg px-md z-50">
+<div class="mb-xl flex items-center gap-md px-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">FF</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary">FocusFlow</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Productivity Workspace</p>
+</div>
+</div>
+<button class="mb-lg w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-lg flex items-center justify-center gap-sm hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+            New Entry
+        </button>
+<ul class="space-y-sm flex-1">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-primary dark:text-inverse-primary font-bold border-r-2 border-primary dark:border-inverse-primary bg-surface-container-high hover:bg-surface-container-high dark:hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+                    Notes
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+                    Tasks
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                    Calendar
+                </a>
+</li>
+</ul>
+<div class="mt-auto flex items-center gap-md px-sm pt-lg border-t border-outline-variant">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, circular avatar portrait of a professional individual in a minimalist studio setting, well-lit, soft shadows, evoking a calm and organized digital workspace vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnJc26KblHrQqr1yVtbo-kr0GyhHBqDe1yEBmSwYg6m3-HkHfFnxwlBUBN-JsSpxjes5i_ENJK3WRCnpk3RfVHtdKa8B46d2uWrzENmCtvkm-hEIGIA7P8omgvkRUr9iKNuaeefYF1RE85rAVu7qE_VByhoyo7QTieYHpbsEKTHllho9wSJcAEvDPE_wfALNJdrkgQgDA6IALZzrNAFTdpkVjHXrWetNUoWEGzKt9t2iZsqdMnnKN4"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Settings</span>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 h-screen bg-surface">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant flex justify-between items-center h-16 px-lg sticky top-0 z-40">
+<div class="flex items-center gap-md flex-1">
+<div class="relative w-full max-w-md hidden md:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border border-outline-variant rounded-lg font-body-sm text-body-sm focus:outline-none focus-within:ring-2 focus-within:ring-primary focus:border-primary transition-all" placeholder="Search notes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-xs text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-xs text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Notes Chat Interface -->
+<main class="flex-1 overflow-y-auto p-md md:p-xl flex flex-col gap-xl relative">
+<!-- Date Separator -->
+<div class="flex justify-center my-md">
+<span class="bg-surface-container-high px-md py-xs rounded-full font-label-md text-label-md text-on-surface-variant">Today</span>
+</div>
+<!-- Note Bubble (System/Other) -->
+<div class="flex items-start gap-md max-w-3xl mr-auto">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex-shrink-0 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl rounded-tl-none border border-outline-variant/30 shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Project Alpha Kickoff Ideas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm whitespace-pre-wrap">Need to outline the core objectives for Q3. 
+- Focus on user retention metrics.
+- Revamp onboarding flow based on recent feedback.
+- Ping Sarah for the latest design assets.</p>
+<div class="flex items-center justify-between text-on-surface-variant opacity-70">
+<span class="font-label-md text-label-md">10:42 AM</span>
+<div class="flex gap-xs">
+<span class="material-symbols-outlined text-[14px]">push_pin</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Note Bubble (Self/Pinned) -->
+<div class="flex items-start gap-md max-w-3xl ml-auto flex-row-reverse">
+<div class="w-8 h-8 rounded-full bg-primary-container flex-shrink-0 flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[16px]">person</span>
+</div>
+<div class="bg-primary-container/10 p-md rounded-xl rounded-tr-none border border-primary/20 shadow-sm relative overflow-hidden group">
+<!-- Subtle left accent for personal/important notes -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs pl-xs">Meeting Notes: Sync with Dev Team</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm pl-xs">Discussed API integration blockers. ETA for resolution is tomorrow EOD. We need to follow up on the specific error codes they mentioned regarding the authentication endpoint.</p>
+<div class="flex items-center justify-between text-on-surface-variant opacity-70 pl-xs">
+<span class="font-label-md text-label-md">11:15 AM</span>
+<div class="flex gap-xs opacity-0 group-hover:opacity-100 transition-opacity">
+<button><span class="material-symbols-outlined text-[16px] hover:text-primary">edit</span></button>
+<button><span class="material-symbols-outlined text-[16px] hover:text-error">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Date Separator -->
+<div class="flex justify-center my-md">
+<span class="bg-surface-container-high px-md py-xs rounded-full font-label-md text-label-md text-on-surface-variant">Yesterday</span>
+</div>
+<!-- Note Bubble (System/Other) -->
+<div class="flex items-start gap-md max-w-3xl mr-auto">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex-shrink-0 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">article</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl rounded-tl-none border border-outline-variant/30 shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Grocery &amp; Errands</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant mb-sm list-disc list-inside">
+<li>Coffee beans (dark roast)</li>
+<li>Almond milk</li>
+<li>Pick up dry cleaning</li>
+<li>Drop off library books</li>
+</ul>
+<div class="flex items-center justify-between text-on-surface-variant opacity-70">
+<span class="font-label-md text-label-md">4:30 PM</span>
+</div>
+</div>
+</div>
+<!-- Padding for FAB -->
+<div class="h-24"></div>
+</main>
+<!-- Floating Action Button -->
+<div class="absolute bottom-xl right-xl z-50">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center justify-center group focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<span class="material-symbols-outlined text-[24px] group-hover:rotate-90 transition-transform duration-300">edit_square</span>
+</button>
+</div>
+</div>
+</body></html>
