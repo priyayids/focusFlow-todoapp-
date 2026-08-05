@@ -19,7 +19,7 @@ RUN npm run build
 
 # Go back to root and expose port
 WORKDIR /app
-EXPOSE 3000
+EXPOSE 8000
 
 # Run the backend server which also serves the client build
 CMD ["npx", "tsx", "server.ts"]
